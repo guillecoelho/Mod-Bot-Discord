@@ -93,7 +93,8 @@ client.on('disconnect', () => {
 	console.log(`[${date}][${time}]: Bot se ha desconectado.`);
 });
 
-client.login(config.token);
+require('dotenv').config();
+client.login(process.env.TOKEN);
 
 client.on('error', (e) => console.error(e));
 client.on('warn', (e) => console.warn(e));
